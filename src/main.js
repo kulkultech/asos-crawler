@@ -7,7 +7,7 @@ const {
 const products = []
 
 Apify.main(async () => {
-  const inputArr = await Apify.getInput('MYINPUT')
+  const inputArr = await Apify.getInput()
 
   if (!inputArr || !inputArr.length) throw new Error('Invalid input, must be a JSON object with the "url" field!')
 
@@ -21,7 +21,7 @@ Apify.main(async () => {
 
       const price = (await page.$eval('#aside-content .current-price-container', el => el.textContent)).trim()
       const title = (await page.$eval('#aside-content h1', el => el.textContent)).trim()
-      const priceArr = price.split(/(\p{Sc}|([0-9]+))/)
+      const priceArr = price.split(/(\p{Sc}|([.0-9]+))/)
       const productId = request.url.split('/').slice(-1)[0]
       const results = {
         url: request.url,
