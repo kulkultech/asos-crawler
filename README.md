@@ -10,15 +10,17 @@ Easily use to crawl assos.com detail product by list of product url
 
 ## Input
 
-```json
-[
-  {
-    "url": "https://www.asos.com/prd/14031451"
-  },
-  {
-    "url": "https://www.asos.com/prd/14084626"
-  }
-]
+```
+{
+  "inputs": [
+    {
+      "url": "https://www.asos.com/prd/14031451"
+    },
+    {
+      "url": "https://www.asos.com/prd/14084626"
+    }
+  ]
+}
 ```
 
 ## Output

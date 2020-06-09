@@ -7,12 +7,12 @@ const {
 const products = []
 
 Apify.main(async () => {
-  const inputArr = await Apify.getInput()
+  const { inputs } = await Apify.getInput()
 
-  if (!inputArr || !inputArr.length) throw new Error('Invalid input, must be a JSON object with the "url" field!')
+  if (!inputs || !inputs.length) throw new Error('Invalid input, must be a JSON object with the "url" field!')
 
   const listName = Date.now().toString()
-  const requestList = await Apify.openRequestList(listName, inputArr)
+  const requestList = await Apify.openRequestList(listName, inputs)
 
   const crawler = new Apify.PuppeteerCrawler({
     requestList,
