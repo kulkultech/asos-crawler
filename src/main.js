@@ -7,7 +7,7 @@ const {
 const products = []
 
 Apify.main(async () => {
-  const { inputs } = await Apify.getInput()
+  const { inputs, launchPuppeteerOptions = {} } = await Apify.getInput()
 
   if (!inputs || !inputs.length) throw new Error('Invalid input, must be a JSON object with the "url" field!')
 
@@ -15,6 +15,7 @@ Apify.main(async () => {
   const requestList = await Apify.openRequestList(listName, inputs)
 
   const crawler = new Apify.PuppeteerCrawler({
+    launchPuppeteerOptions,
     requestList,
     handlePageFunction: async ({ request, page }) => {
       console.log(`Processing ${request.url}...`)
