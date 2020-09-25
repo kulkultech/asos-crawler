@@ -1,5 +1,5 @@
 {
-	"name": "asos-crawler",
+	"name": "@kulkul/asos-crawler",
 	"version": "0.0.1",
 	"description": "Easily use to crawl assos.com detail product by list of product url",
 	"dependencies": {
