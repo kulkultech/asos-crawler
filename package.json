@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "Easily use to crawl assos.com detail product by list of product url",
 	"dependencies": {
-		"apify": "^0.20.0"
+		"apify": "^3.5.2"
 	},
 	"devDependencies": {
 		"@apify/eslint-config": "0.0.3",
